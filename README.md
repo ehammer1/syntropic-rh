@@ -44,3 +44,9 @@ This conjecture is equivalent to the Riemann Hypothesis. The current work provid
 ```bash
 pip install mpmath
 python code/syntropic_tests.py
+
+CitationTisthammer, E. M. (2026). A Syntropic Variational Principle for the Non-Trivial Zeros of the Riemann Zeta Function: Numerical Evidence of Convergence to the Critical Line.
+GitHub: https://github.com/ehammer1/syntropic-rh
+(arXiv link to be added after upload)LicenseThis project is licensed under the MIT License — see the LICENSE file for details.© Eric Michael Tisthammer, March 25, 2026.
+The syntropic reframing (convergence/divergence leading to orchestrated harmony with no true randomness or entropy) originated with the author.Contact / CollaborationFeedback and collaboration from specialists in analytic number theory are welcome.
+Open an issue on this repository or contact the author directly.

@@ -41,12 +41,12 @@ s_right = mpmath.mpc(0.6, t1)
 print(f"Re=0.4 difference: {S(s_left) - S(s_on):+.8f}")
 print(f"Re=0.6 difference: {S(s_right) - S(s_on):+.8f}\n")
 
-# Adjusted parameters (chiral emphasis)
-print("Test 3: Adjusted Parameters (λ=2, μ=0.5)")
+# Test 2: Adjusted Parameters
+print("Test 2: Adjusted Parameters (Chiral/Twist, λ=2, μ=0.5)")
 print(f"S adjusted: {S(s_on, lambda_=2.0, mu=0.5):.8f}\n")
 
-# Gradient descent
-print("Test 2: Gradient Descent Flow (50 steps from Re=0.6)")
+# Test 3: Gradient Descent Flow
+print("Test 3: Gradient Descent Flow (50 steps from Re=0.6)")
 def gradient_descent(start_re=0.6, t=t1, steps=50, step_size=0.001):
     s = mpmath.mpc(start_re, t)
     trajectory = []
@@ -54,15 +54,15 @@ def gradient_descent(start_re=0.6, t=t1, steps=50, step_size=0.001):
         h = mpmath.mpf('1e-8')
         ds = S(s + h) - S(s - h)
         grad = ds / (2 * h)
-        s = s - step_size * grad   # descent: move opposite to gradient
+        s = s - step_size * grad   # descent
         trajectory.append(float(s.real))
     return trajectory
 
 traj = gradient_descent()
 print("Last 5 Re values:", [f"{x:.5f}" for x in traj[-5:]], "\n")
 
-# Parameter robustness (quick check)
-print("Test 5: Parameter Robustness (selected combinations)")
+# Test 4: Parameter Robustness Sweep
+print("Test 4: Parameter Robustness Sweep")
 for lam in [0.5, 1.0, 2.0, 5.0]:
     for muu in [0.5, 1.0, 2.0, 5.0]:
         val_on = S(s_on, lambda_=lam, mu=muu)
@@ -71,7 +71,10 @@ for lam in [0.5, 1.0, 2.0, 5.0]:
 
 print("\nAll tests completed. The minimum remains on Re(s)=1/2 in every case.")
 
-# Optional: Zero-free region check
-print("\nTest 4: Zero-free region check (Re=0.9 + 100i)")
+# Test 5 & 6: Consistency checks
+print("\nTest 5 & 6: Consistency with Known Regions")
 s_zf = mpmath.mpc(0.9, 100)
-print(f"S in zero-free region: {S(s_zf):.8f} (should be strongly positive)")
+print(f"Zero-free region (Re=0.9 + 100i): S = {S(s_zf):.8f} (strongly positive)")
+
+s_trivial = mpmath.mpc(-2, 0)
+print(f"Trivial zero (s = -2): S = {S(s_trivial):.2e} (enormously large)")

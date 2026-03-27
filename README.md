@@ -1,6 +1,3 @@
-# syntropic-rh
-Numerical evidence and conceptual framework for a syntropic variational approach to the Riemann Hypothesis
-
 # Syntropic Variational Principle for the Riemann Hypothesis
 
 **Numerical Evidence of Convergence to the Critical Line**
@@ -26,7 +23,7 @@ Let \(\chi(s) = 2^s \pi^{s-1} \sin(\pi s/2) \Gamma(1-s)\). Define
 
 with \(\lambda, \mu > 0\).
 
-**Conjecture:** \(\mathcal{S}(s) \geq 0\) for all \(s\) in the critical strip \(0 < \operatorname{Re}(s) < 1\), with equality if and only if \(\operatorname{Re}(s) = 1/2\) and \(\zeta(s) = 0\). The syntropic flow \(-\nabla \mathcal{S}(s)\) converges to the critical line.
+**Conjecture:** \(\mathcal{S}(s) \geq 0\) for all \(s\) in the critical strip \(0 < \operatorname{Re}(s) < 1\), with equality if and only if \(\operatorname{Re}(s) = 1/2\) and \(\zeta(s) = 0\). Furthermore, the syntropic flow \(-\nabla \mathcal{S}(s)\) converges to the critical line.
 
 This conjecture is equivalent to the Riemann Hypothesis. The current work provides **numerical support** only; a full analytic proof remains open.
 
